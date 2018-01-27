@@ -11,7 +11,7 @@ HY:n fullstack-kurssin tehtävien palautukset
 - [x] Tehtävä 0.5
 - [x] Tehtävä 0.6
 
-## Vikko 1:
+## Viikko 1:
 - [ ] Tehtävä 1.1
 - [ ] Tehtävä 1.2
 - [ ] Tehtävä 1.3
@@ -27,7 +27,7 @@ HY:n fullstack-kurssin tehtävien palautukset
 - [ ] Tehtävä 1.13*
 - [ ] Tehtävä 1.14*
 
-## Vikko 2:
+## Viikko 2:
 - [ ] Tehtävä 2.1
 - [ ] Tehtävä 2.2
 - [ ] Tehtävä 2.3*
@@ -51,7 +51,7 @@ HY:n fullstack-kurssin tehtävien palautukset
 - [ ] Tehtävä 2.21
 - [ ] Tehtävä 2.22
 
-## Vikko 3:
+## Viikko 3:
 - [ ] Tehtävä 3.1
 - [ ] Tehtävä 3.2
 - [ ] Tehtävä 3.3
@@ -75,7 +75,7 @@ HY:n fullstack-kurssin tehtävien palautukset
 - [ ] Tehtävä 3.21*
 - [ ] Tehtävä 3.22
 
-## Vikko 4:
+## Viikko 4:
 - [ ] Tehtävä 4.1
 - [ ] Tehtävä 4.2
 - [ ] Tehtävä 4.3
