@@ -51,7 +51,9 @@ const Button = ({ handleClick, text }) => (
 )
 
 const Statistic = ({ statistic, value }) => (
-    <p>{statistic} {value}</p>
+    <tr>
+        <td>{statistic}</td><td>{value}</td>
+    </tr>
 )
 
 class Statistics extends React.Component {
@@ -65,13 +67,24 @@ class Statistics extends React.Component {
         const ka = ((statistics.hyva - statistics.huono) / maara)
         const positiivisia = ((statistics.hyva / maara) * 100) + " %"
 
+        if (maara === 0) {
+            return (
+                <div>
+                    <em>Ei yhtään palautetta annettu</em>
+                </div>
+            )
+        }
         return (
             <div>
-                <Statistic statistic="hyvä" value={statistics.hyva} />
-                <Statistic statistic="neutraali" value={statistics.neutraali} />
-                <Statistic statistic="huono" value={statistics.huono} />
-                <Statistic statistic="keskiarvo" value={ka} />
-                <Statistic statistic="positiivisia" value={positiivisia} />
+                <table>
+                    <tbody>
+                        <Statistic statistic="hyvä" value={statistics.hyva} />
+                        <Statistic statistic="neutraali" value={statistics.neutraali} />
+                        <Statistic statistic="huono" value={statistics.huono} />
+                        <Statistic statistic="keskiarvo" value={ka} />
+                        <Statistic statistic="positiivisia" value={positiivisia} />
+                    </tbody>
+                </table>
             </div>
         )
 
