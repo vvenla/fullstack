@@ -20,10 +20,10 @@ HY:n fullstack-kurssin tehtävien palautukset
 - [x] Tehtävä 1.6
 - [x] Tehtävä 1.7
 - [x] Tehtävä 1.8
-- [ ] Tehtävä 1.9*
-- [ ] Tehtävä 1.10*
-- [ ] Tehtävä 1.11
-- [ ] Tehtävä 1.12*
+- [x] Tehtävä 1.9*
+- [x] Tehtävä 1.10*
+- [x] Tehtävä 1.11
+- [x] Tehtävä 1.12*
 - [ ] Tehtävä 1.13*
 - [ ] Tehtävä 1.14*
 
