@@ -6,7 +6,8 @@ class App extends React.Component {
     super(props)
     this.state = {
       persons: props.persons,
-      newName: ''
+      newName: '',
+      newNumber: ''
     }
   }
 
@@ -18,14 +19,16 @@ class App extends React.Component {
     if (olio === undefined) {
 
       const personObject = {
-        name: this.state.newName
+        name: this.state.newName,
+        number: this.state.newNumber
       }
 
       const persons = this.state.persons.concat(personObject)
 
       this.setState({
         persons: persons,
-        newName: ''
+        newName: '',
+        newNumber: ''
       })
 
     } else {
@@ -33,14 +36,20 @@ class App extends React.Component {
 
       this.setState({
         persons: persons,
-        newName: ''
+        newName: '',
+        newNumber: ''
       })
     }
   }
 
-  handlePersonChange = (event) => {
+  handleNameChange = (event) => {
     console.log(event.target.value)
     this.setState({ newName: event.target.value })
+  }
+
+  handleNumberChange = (event) => {
+    console.log(event.target.value)
+    this.setState({ newNumber: event.target.value })
   }
 
   render() {
@@ -51,11 +60,23 @@ class App extends React.Component {
         <h2>Puhelinluettelo</h2>
 
         <form onSubmit={this.addPerson}>
-          nimi: <input
-            value={this.state.newName}
-            onChange={this.handlePersonChange}
-          />
-          <button type="submit">lisää</button>
+          <div>
+            nimi: <input
+              value={this.state.newName}
+              onChange={this.handleNameChange}
+            />
+          </div>
+
+          <div>
+            numero: <input
+              value={this.state.newNumber}
+              onChange={this.handleNumberChange}
+            />
+          </div>
+
+          <div>
+            <button type="submit">lisää</button>
+          </div>
         </form>
 
         <h2>Numerot</h2>
