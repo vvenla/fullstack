@@ -1,14 +1,27 @@
-import React from 'react';
+import React from 'react'
 import Person from './components/Person'
+import AddForm from './components/AddForm'
+import axios from 'axios'
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      persons: props.persons,
+      persons: [],
       newName: '',
       newNumber: ''
     }
+    console.log('constructor')
+  }
+
+  componentDidMount() {
+    console.log('will mount')
+    axios
+      .get('http://localhost:3001/persons')
+      .then(response => {
+        console.log('promise fulfilled')
+        this.setState({ persons: response.data })
+      })
   }
 
   addPerson = (event) => {
@@ -53,39 +66,19 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('render')
     const persons = this.state.persons
 
     return (
       <div>
         <h2>Puhelinluettelo</h2>
-
-        <form onSubmit={this.addPerson}>
-          <div>
-            nimi: <input
-              value={this.state.newName}
-              onChange={this.handleNameChange}
-            />
-          </div>
-
-          <div>
-            numero: <input
-              value={this.state.newNumber}
-              onChange={this.handleNumberChange}
-            />
-          </div>
-
-          <div>
-            <button type="submit">lisää</button>
-          </div>
-        </form>
-
+        <AddForm submitFunc={this.addPerson}
+          state={this.state}
+          changeNameFunc={this.handleNameChange}
+          changeNumberFunc={this.handleNumberChange} />
         <h2>Numerot</h2>
-        <div>
-          <ul>
-            {persons.map(person =>
-              <Person key={person.name} person={person} />)}
-          </ul>
-        </div>
+        {persons.map(person =>
+          <Person key={person.name} person={person} />)}
       </div>
     )
   }
