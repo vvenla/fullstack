@@ -1,7 +1,7 @@
 import React from 'react'
 import Person from './components/Person'
 import AddForm from './components/AddForm'
-import axios from 'axios'
+import personService from './services/persons'
 
 class App extends React.Component {
   constructor(props) {
@@ -15,11 +15,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('will mount')
-    axios
-      .get('http://localhost:3001/persons')
+    personService
+      .getAll()
       .then(response => {
-        console.log('promise fulfilled')
         this.setState({ persons: response.data })
       })
   }
@@ -36,13 +34,19 @@ class App extends React.Component {
         number: this.state.newNumber
       }
 
-      const persons = this.state.persons.concat(personObject)
 
-      this.setState({
-        persons: persons,
-        newName: '',
-        newNumber: ''
-      })
+      personService
+        .create(personObject)
+        .then(response => {
+          console.log(response)
+          this.setState({
+            persons: this.state.persons.concat(response.data),
+            newName: '',
+            newNumber: ''
+          })
+        })
+
+
 
     } else {
       const persons = this.state.persons
@@ -65,6 +69,22 @@ class App extends React.Component {
     this.setState({ newNumber: event.target.value })
   }
 
+
+  deleteFunc = (person) => {
+    if (window.confirm('Haluatko varmasti poistaa?')) {
+      console.log(person)
+      personService
+        .del(person)
+        .then(response => {
+          if(response.status===200){
+            const arr = this.state.persons.slice(0).filter(p => p.id !== person)
+            this.setState({ persons: arr })
+          }
+          
+        })
+    }
+  }
+
   render() {
     console.log('render')
     const persons = this.state.persons
@@ -78,7 +98,9 @@ class App extends React.Component {
           changeNumberFunc={this.handleNumberChange} />
         <h2>Numerot</h2>
         {persons.map(person =>
-          <Person key={person.name} person={person} />)}
+          <Person key={person.name}
+            person={person}
+            delFunc={this.deleteFunc.bind(this.person)} />)}
       </div>
     )
   }
