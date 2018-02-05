@@ -28,28 +28,25 @@ HY:n fullstack-kurssin tehtävien palautukset
 - [ ] Tehtävä 1.14*
 
 ## Viikko 2:
-- [ ] Tehtävä 2.1
-- [ ] Tehtävä 2.2
-- [ ] Tehtävä 2.3*
-- [ ] Tehtävä 2.4
-- [ ] Tehtävä 2.5
-- [ ] Tehtävä 2.6
-- [ ] Tehtävä 2.7
-- [ ] Tehtävä 2.8
+- [x] Tehtävä 2.1
+- [x] Tehtävä 2.2
+- [x] Tehtävä 2.3*
+- [x] Tehtävä 2.4
+- [x] Tehtävä 2.5
+- [x] Tehtävä 2.6
+- [x] Tehtävä 2.7
+- [x] Tehtävä 2.8
 - [ ] Tehtävä 2.9*
-- [ ] Tehtävä 2.10
-- [ ] Tehtävä 2.11
+- [x] Tehtävä 2.10
+- [x] Tehtävä 2.11
 - [ ] Tehtävä 2.12*
 - [ ] Tehtävä 2.13*
-- [ ] Tehtävä 2.14
-- [ ] Tehtävä 2.15
-- [ ] Tehtävä 2.16
+- [x] Tehtävä 2.14
+- [x] Tehtävä 2.15
+- [x] Tehtävä 2.16
 - [ ] Tehtävä 2.17*
 - [ ] Tehtävä 2.18
 - [ ] Tehtävä 2.19*
-- [ ] Tehtävä 2.20
-- [ ] Tehtävä 2.21
-- [ ] Tehtävä 2.22
 
 ## Viikko 3:
 - [ ] Tehtävä 3.1
