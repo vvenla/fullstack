@@ -76,7 +76,7 @@ class App extends React.Component {
       personService
         .del(person)
         .then(response => {
-          if(response.status===200){
+          if(response.status===204){
             const arr = this.state.persons.slice(0).filter(p => p.id !== person)
             this.setState({ persons: arr })
           }
